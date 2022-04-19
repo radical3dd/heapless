@@ -80,8 +80,6 @@ pub use histbuf::{HistoryBuffer, OldestOrdered};
 pub use indexmap::{Bucket, FnvIndexMap, IndexMap, Pos};
 pub use indexset::{FnvIndexSet, IndexSet};
 pub use linear_map::LinearMap;
-#[cfg(all(has_cas, feature = "cas"))]
-pub use pool::singleton::arc::Arc;
 pub use string::String;
 pub use vec::Vec;
 
@@ -101,11 +99,7 @@ mod ser;
 pub mod binary_heap;
 #[cfg(feature = "defmt-impl")]
 mod defmt;
-#[cfg(all(has_cas, feature = "cas"))]
-pub mod mpmc;
-#[cfg(all(has_cas, feature = "cas"))]
-pub mod pool;
-pub mod sorted_linked_list;
+
 #[cfg(has_atomics)]
 pub mod spsc;
 

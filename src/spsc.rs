@@ -86,10 +86,10 @@
 
 use core::{cell::UnsafeCell, fmt, hash, mem::MaybeUninit, ptr};
 
-#[cfg(full_atomic_polyfill)]
+//#[cfg(full_atomic_polyfill)]
 use atomic_polyfill::{AtomicUsize, Ordering};
 #[cfg(not(full_atomic_polyfill))]
-use core::sync::atomic::{AtomicUsize, Ordering};
+//use core::sync::atomic::{AtomicUsize, Ordering};
 
 /// A statically allocated single producer single consumer queue with a capacity of `N - 1` elements
 ///
